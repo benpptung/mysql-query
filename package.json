@@ -1,19 +1,29 @@
 {
   "name": "mysql-query",
-  "version": "1.0.0",
   "description": "wrap mysql and add methods for query",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "mysql"
-  ],
+  "version": "1.0.0",
   "author": "Ben P.P. Tung",
-  "license": "UNLICENSED",
   "dependencies": {
     "debug": "^2.6.8",
     "mysql": "^2.13.0",
     "mysql2": "^1.3.5"
+  },
+  "keywords": [
+    "mysql"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benpptung/mysql-query.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benpptung/mysql-query/issues"
+  },
+  "homepage": {
+    "url": "https://github.com/benpptung/mysql-query"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
