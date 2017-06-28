@@ -34,11 +34,6 @@ function MysqlQuery(opt) {
      */
     pool: { get: _=> pool }
   });
-
-  this.query = this.query.bind(this);
-  this.insertId = this.insertId.bind(this);
-  this.objectSelect = this.objectSelect.bind(this);
-  this.arraySelect = this.arraySelect.bind(this);
 }
 
 /**
