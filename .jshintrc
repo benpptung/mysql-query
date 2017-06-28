@@ -1,0 +1,12 @@
+{
+  "asi": true,
+  "esversion": 6,
+  "node": true,
+  "globals": {
+    "window": false,
+    "document": false,
+    "Element": false,
+    "location": false,
+    "history": false
+  }
+}
