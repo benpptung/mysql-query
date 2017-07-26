@@ -3,6 +3,8 @@
 const mysql = require('mysql');
 const mysql2 = require('mysql2');
 const connect = require('./lib/connect');
+const debug = require('debug')('mysql-query');
+const inspect = require('util').inspect;
 
 module.exports = MysqlQuery;
 var prototype = MysqlQuery.prototype;
@@ -57,6 +59,7 @@ prototype.query = function(method, sql, values, cb) {
 prototype.insertId = function(method, sql, values, cb) {
   this.pool.getConnection(connect(method, sql, values, function(err, res) {
     if (err) return cb(err);
+    debug('insertId.res:' + inspect(res, {colors: true}));
     if (res && res.insertId) return cb(null, res.insertId);
     cb(null, null);
   }))
