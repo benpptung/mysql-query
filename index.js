@@ -37,6 +37,7 @@ function MysqlQuery(opt) {
 }
 
 /**
+ * query(): do not return anything except error
  * @protected
  * @param {string} method
  * @param {string} sql
@@ -44,7 +45,9 @@ function MysqlQuery(opt) {
  * @param {function} cb
  */
 prototype.query = function(method, sql, values, cb) {
-  this.pool.getConnection(connect(method, sql, values, cb));
+  //this.pool.getConnection(connect(method, sql, values, cb));
+  // query(): do not return anything except error
+  this.pool.getConnection(connect(method, sql, values, err=> cb(err)));
 };
 
 /**
