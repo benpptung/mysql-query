@@ -94,3 +94,21 @@ prototype.arraySelect = function(method, sql, values, cb) {
   }));
 };
 
+/**
+ * Return a payload with attributes limited to whitelist
+ * @param payload
+ * @param attributes
+ * @return {{}}
+ */
+MysqlQuery.whitelist = function(payload, attributes) {
+  var state = {};
+  if (!Array.isArray(attributes) || !attributes.length) return state;
+
+  var keys = Object.keys(payload);
+  for(let i = 0, len = keys.length; i < len; ++i) {
+    let key = keys[i];
+    if (attributes.indexOf(key) >= 0) state[key] = payload[key];
+  }
+
+  return state;
+};
