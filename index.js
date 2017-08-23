@@ -6,7 +6,7 @@ const connect = require('./lib/connect');
 
 module.exports = MysqlQuery;
 var prototype = MysqlQuery.prototype;
-var pool = null;
+var pool = {};
 
 /**
  * @param {object} opt
@@ -19,8 +19,12 @@ function MysqlQuery(opt) {
   var driver = ~['mysql', 'mysql2'].indexOf(opt.driver) ? opt.driver : 'mysql';
   delete opt.driver;
 
+  var key = opt.host + opt.user + opt.database;
+
   // pool shall be singleton
-  if (!pool) pool = mysql.createPool(opt);
+  if (!pool[key]) {
+    pool[key] = mysql.createPool(opt);
+  }
 
   Object.defineProperties(this, {
 
@@ -32,7 +36,7 @@ function MysqlQuery(opt) {
     /**
      * @property pool
      */
-    pool: { get: _=> pool }
+    pool: { get: _=> pool[key] }
   });
 }
 

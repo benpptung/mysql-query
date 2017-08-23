@@ -1,7 +1,7 @@
 {
   "name": "mysql-query",
   "description": "wrap mysql and add methods for query",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Ben P.P. Tung",
   "bugs": {
     "url": "https://github.com/benpptung/mysql-query/issues"
@@ -24,6 +24,11 @@
     "url": "https://github.com/benpptung/mysql-query.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint . --ignore-pattern node_modules/"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-plugin-node": "^5.1.1"
   }
 }
