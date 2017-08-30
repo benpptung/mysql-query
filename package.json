@@ -25,10 +25,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint . --ignore-pattern node_modules/"
+    "eslint": "TIMING=1 eslint . --ignore-pattern node_modules/"
   },
   "devDependencies": {
     "eslint": "^4.5.0",
+    "eslint-config-less": "github:benpptung/eslint-config-less",
     "eslint-plugin-node": "^5.1.1"
   }
 }
